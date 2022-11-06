@@ -59,6 +59,7 @@ double intensity; // set it in constructor
 void rotate(char option,double angle);
 void print();
 void screen_clear();
+void set_color(int );
 };
 
 
@@ -95,6 +96,10 @@ cylinder(double r,double h,int x0,int y0,int z0);
 class parabola : public maya
 {
 
+public:
+double radius;
+
+parabola(double r,int x0,int y0,int z0);
 
 };
 class cardiod : public maya
@@ -104,9 +109,11 @@ class cardiod : public maya
 };
 class sphere : public maya
 {
-
-
+public:
+double radius;
+sphere(int r,int x0,int y0,int z0);
 };
+
 class toroid : public maya
 {
 public:
