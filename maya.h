@@ -25,7 +25,7 @@ using namespace std;
 #define RAD(ANG) (M_PI/180.0)*ANG;
 
 
-enum colour{black=30,red,green,brown,blue,magenta,cyan,white,bblack=40,bred,bgreen,bbrown,bblue,bmagenta,bcyan,bwhite,bdef=49  };
+enum color{black=30,red,green,brown,blue,magenta,cyan,white,bblack=40,bred,bgreen,bbrown,bblue,bmagenta,bcyan,bwhite,bdef=49  }	;
 
 // delete alll commentsssssssssssssssssssssssssssssssssssssssss
 
@@ -59,7 +59,7 @@ double intensity; // set it in constructor
 void rotate(char option,double angle);
 void print();
 void screen_clear();
-void set_color(int );
+void set_color(int& );
 };
 
 
@@ -104,6 +104,10 @@ parabola(double r,int x0,int y0,int z0);
 };
 class cardiod : public maya
 {
+public:
+double radius;
+
+cardiod(double r,int x0,int y0,int z0);
 
 
 };
@@ -111,22 +115,22 @@ class sphere : public maya
 {
 public:
 double radius;
-sphere(int r,int x0,int y0,int z0);
+sphere(double r,int x0,int y0,int z0);
 };
 
 class toroid : public maya
 {
 public:
-int outer_radius,inner_radius;
+double outer_radius,inner_radius;
 
-toroid(int r1,int r2,int x0,int y0,int z0);
+toroid(double r1,double r2,int x0,int y0,int z0);
 
 };
 class cube : public maya
 {
 public:
-int radius;
-cube(int r,int x0,int y0,int z0);
+double radius;
+cube(double r,int x0,int y0,int z0);
 
 
 };
